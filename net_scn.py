@@ -6,7 +6,7 @@ import pyfiglet;
 from scapy.all import conf, ARP, srp, Ether;
 
 #net scanner funky text
-intro = pyfiglet.figlet_format("     .. NET SCANNER ..")
+intro = pyfiglet.figlet_format("      NET SCANNER")
 print(intro+"\n-------------------------------------------------------"+"\u00A9 Janidu Dilshan----------------------------------------------------")
 #finding ip and subnet part I
 
