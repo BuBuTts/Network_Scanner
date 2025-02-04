@@ -36,7 +36,7 @@ ether = Ether(dst ='ff:ff:ff:ff:ff:ff') #create ether broadcast message
 
 packet = ether/arp #stacking both to one
 
-result = srp(packet,timeout=4,verbose=0)[0] #capturing answered packets
+result = srp(packet,timeout=5,verbose=0)[0] #capturing answered packets
 
 targets =[] #list to store ips and macs in nework
 
