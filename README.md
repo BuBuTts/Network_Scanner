@@ -58,7 +58,7 @@ Follow the on-screen prompts:
 
 ## License
 
-Open-source | free to use
+**MIT License**
 
 ## Author
 
