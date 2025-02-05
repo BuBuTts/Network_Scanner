@@ -10,7 +10,6 @@ from scapy.all import conf, ARP, srp, Ether;
 
 #net scanner funky text
 intro = pyfiglet.figlet_format("      NET SCANNER")
-print(intro+"\n-------------------------------------------------------"+"\u00A9 Janidu Dilshan----------------------------------------------------")
 #finding ip and subnet part I
 
 
@@ -88,13 +87,13 @@ loaded_mac_dict = load_mac_dict()
 
 #printing result on console
 def print_result():
-    print("\n\n-------------------Network devices in this network---------------------\n")
+    print("\n\n-------------------\033[1;96mNetwork devices in this network\033[0m---------------------\n")
     print("IP addresse \t\t\tMAC addresse\t\t\tvendor")
     recordCounter= 0
     for target in targets:
         print(f"{target['ip']}\t\t\t{target['mac']}\t{target['vendor']}")
         recordCounter +=1
-    print(f"\n{recordCounter} devices detected")
+    print(f"\n{recordCounter} devices detected\n------------------------------------------------------------------------------------\n\n")
     return
 
 
@@ -122,9 +121,22 @@ while(True):
     targets =[] #list to store ips and macs in nework
 
 #Letting user to decide to either do mac address lookup along with the scan
-    print("Both scans give you the list of ip addresse,mac addresse and vendor of each device in network.\nWhile fast scan give you the vendor's name associated with the mac addresses reading localy available dataset(\033[31mdataset file has to be in the same directory\033[0m]),\nAdvance scan use address lookup API (more updated details).\n!\033[31mCaution : advance network may require longer time due to API service restricted one request for 1 second\033[0m .")
-    print("1. Fast network scan\n2. Advanced network scan\n3. \033[31mExit\033[0m")
-    answer = int(input("Enter option number : "))
+    print("\n\n\033[1mNetwork Scanner Modes:\033[0m\n\n"
+      "This tool scans your network and lists all connected devices with their \033[1;34mIP addresses\033[0m, "
+      "\033[1;34mMAC addresses\033[0m, and \033[1;34mVendor details\033[0m.\n\n"
+      
+      "\033[1;32m⚡ Fast Scan:\033[0m Reads vendor details from a local dataset for quick results. "
+      "\033[31m(Note: The dataset file must be in the same directory.)\033[0m\n\n"
+      
+      "\033[1;34m🌐 Advanced Scan:\033[0m Uses an online API for real-time vendor lookup with more accurate and updated details.\n"
+      "\033[31m⚠ Warning:\033[0m This mode may take longer due to API limitations (only one request per second).\n")
+
+    print("\033[1;35m1. Fast Network Scan\033[0m\n")
+    print("\033[1;34m2. Advanced Network Scan\033[0m\n")
+    print("\033[1;31m3. Exit\033[0m\n")
+
+    answer = int(input("\033[1mEnter option number: \033[0m"))
+
 
 
 
