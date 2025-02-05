@@ -9,7 +9,9 @@ import csv;
 from scapy.all import conf, ARP, srp, Ether;
 
 #net scanner funky text
-intro = pyfiglet.figlet_format("      NET SCANNER")
+intro = pyfiglet.figlet_format("_NET SCANNER_")
+print(f"\033[1;96m{intro}\033[0m")
+print("        \033[1;93m---------------------\033[0m© Janidu Dilshan\033[1;93m----------------------\033[0m")
 #finding ip and subnet part I
 
 
@@ -82,6 +84,7 @@ def findVendor_file(macAddr,loaded_mac):
 
 
 #laoding mac dictionary
+print("\n\n\033[39mReading local data set....")
 loaded_mac_dict = load_mac_dict()
 
 
